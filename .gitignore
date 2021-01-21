@@ -1,0 +1,25 @@
+# Ignore Vagrant directories
+.vagrant
+/topology.yml
+provision/*
+
+#Ignore fetched external repo(s)
+vagrant-junos
+repo
+
+# Ignore Ansible retry and log files
+*.retry
+ansible.log
+
+#Ingnore directory
+notes
+scripts
+test
+toolkit/jinja2/test
+
+#Ignore auto generated file jubrish
+ssh.EXE.stackdump
+*.log
+
+#Ignore Notes
+notes/*
