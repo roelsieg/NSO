@@ -36,6 +36,7 @@ sudo apt-get $QUIET install git ack-grep jq tree sshpass colordiff >/dev/null
 #
 echo "Install Python development and build modules"
 sudo apt-get $QUIET install build-essential python3-dev libffi-dev >/dev/null
+sudo apt-get $QUIET install python
 #
 # Install Python components
 #
@@ -57,15 +58,20 @@ sudo pip3 install $QUIET requests
 
 # Make sure that the file "nso-5.3.linux.x86_64.signed.bin" is place in the provision folder
 sh provision/nso-5.3.linux.x86_64.signed.bin --skip-verification
-sh nso-5.3.linux.x86_64.installer.bin $HOME/nso-5.3
-source $HOME/nso-5.3/ncsrc
-ncs-setup --dest $HOME/ncs-run
-cd $HOME/ncs-run/
+# sh nso-5.3.linux.x86_64.installer.bin $HOME/nso-5.3
+sh nso-5.3.linux.x86_64.installer.bin /opt/ncs
+# source $HOME/nso-5.3/ncsrc
+# ncs-setup --dest $HOME/ncs-run
+# cd $HOME/ncs-run/
+source /opt/ncs/ncsrc
+# Install SAE (download not available)
+# tar -xvf provision/nso-5.2.3.6-cisco-sae-core-fp-2.2.0.tar.gz
+# provision/nso-5.2.3.6-cisco-sae-core-fp-2.2.0/local-install/local-install.sh /opt/ncs
+
+ncs-setup --dest /opt/ncs-run
+cd /opt/ncs-run/
 ncs
 # ncs version installed
 ncs --version
 
-# Install SAE (download not available)
-# wget http://engci-maven-master.cisco.com/artifactory/nso-release/function-pack-releases/corefp/sae/1.0.0/nso-4.7.1-cisco-sae-core-fp-1.0.0.tar.gz
-# tar -xvf nso-4.7.1-cisco-sae-core-fp-1.0.0.tar.gz
 

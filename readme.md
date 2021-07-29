@@ -6,8 +6,8 @@ Download the NSO image `nso-5.3.linux.x86_64.signed.bin` and place it in the fol
 
 ## SAE Install
 
-SAE IInstallation is still under investigation. Availability of a download for the Core Function Package is currently unknown.
-
-<https://www.cisco.com/web/software/286321795/144229/SAE-Core-Function-Pack-Installation-Guide-Version-1.0.0.docx>
+SAE Installation is still under investigation. Availability of a download for the Core Function
+Package is currently unknown. `nso-x.x.x.x-cisco-sae-core-fp-x.x.x.tar.gz`  Should be placed in the
+provision directory.
 
 <https://software.cisco.com/download/home/286323467/type/286321795/release/2.2.0>
