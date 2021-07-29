@@ -1,5 +1,5 @@
 #
-# Juniper lab v0.1
+# NSO lab v0.1
 #
 # ge-0/0/0.0: management interface
 # ge-0/0/1.0 - ge-0/0/7.0: user interfaces
