@@ -31,6 +31,9 @@ echo "Install missing packages (also a pretty long operation)"
 sudo apt-get $QUIET install python-setuptools ifupdown python3-pip >/dev/null
 echo "Install nice-to-have packages"
 sudo apt-get $QUIET install git ack-grep jq tree sshpass colordiff >/dev/null
+# Install some NSO needed packages
+echo "Install NSO missing packages"
+sudo apt-get $QUIET install ant xsltproc >/dev/null
 #
 # Install Ansible and NAPALM dependencies
 #
@@ -57,15 +60,17 @@ sudo pip3 install $QUIET future
 sudo pip3 install $QUIET requests
 
 # Make sure that the file "nso-5.3.linux.x86_64.signed.bin" is place in the provision folder
-sh provision/nso-5.3.linux.x86_64.signed.bin --skip-verification
+# sh provision/nso-5.3.linux.x86_64.signed.bin --skip-verification
+sh provision/nso-5.5.linux.x86_64.signed.bin --skip-verification
 # sh nso-5.3.linux.x86_64.installer.bin $HOME/nso-5.3
-sh nso-5.3.linux.x86_64.installer.bin /opt/ncs
+# sh nso-5.3.linux.x86_64.installer.bin /opt/ncs
+sh nso-5.5.linux.x86_64.installer.bin /opt/ncs
 # source $HOME/nso-5.3/ncsrc
 # ncs-setup --dest $HOME/ncs-run
 # cd $HOME/ncs-run/
 source /opt/ncs/ncsrc
 # Install SAE (download not available)
-# tar -xvf provision/nso-5.2.3.6-cisco-sae-core-fp-2.2.0.tar.gz
+# tar -xvf provision/nso-5.2.3.6-cisco-sae-core-fp-2.2.0.tar.gz /provision
 # provision/nso-5.2.3.6-cisco-sae-core-fp-2.2.0/local-install/local-install.sh /opt/ncs
 
 ncs-setup --dest /opt/ncs-run

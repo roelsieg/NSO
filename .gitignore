@@ -2,6 +2,7 @@
 .vagrant
 /topology.yml
 provision/*
+nso-*
 
 #Ignore fetched external repo(s)
 vagrant-junos
