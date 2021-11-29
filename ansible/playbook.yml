@@ -5,7 +5,7 @@
   tasks:
     - name: ADJUST HOSTNAME
       cisco.nso.nso_config:
-        url: http://192.168.1.23:8080/jsonrpc
+        url: http://192.168.1.23::8080/jsonrpc
         username: admin
         password: admin
         data:
@@ -13,5 +13,4 @@
           device:
           - name: asr1
             config:
-              tailf-ned-cisco-ios-xr:hostname:
-              - name: "asr01"
+              tailf-ned-cisco-ios-xr:hostname: "asr01"
