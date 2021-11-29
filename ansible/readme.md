@@ -5,6 +5,8 @@ towards NSO. We use the datacentre example from `/opt/ncs/examples.ncs/datacente
 
 Just as example of a change with ansible I adjust the name of one of the ASRs.
 
+You need to use the `ansible-galaxy collection install cisco.nso` command to get the collection.
+
 ```csh
 root@ubuntu-focal:/opt/ncs/bin# /opt/ncs/bin/ncs_cli -u admin
 
@@ -34,8 +36,8 @@ result-xml {
 - name: ADJUST HOSTNAME
   cisco.nso.nso_config:
     url: http://127.0.0.1:8080/jsonrpc
-    username: developer
-    password: C1sco12345
+    username: admin
+    password: admin
     data:
         tailf-ncs:devices:
         device:
