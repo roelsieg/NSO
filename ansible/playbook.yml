@@ -13,5 +13,4 @@
           device:
           - name: asr1
             config:
-              tailf-ned-cisco-ios-xr:
-              hostname: "asr01"
+              tailf-ned-cisco-ios:hostname: "asr01"
