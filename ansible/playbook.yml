@@ -1,5 +1,6 @@
-- hosts: nso
-  gather_facts: no
+- hosts: localhost
+  connection: local
+  gather_facts: False
 
   tasks:
     - name: ADJUST HOSTNAME
