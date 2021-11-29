@@ -16,15 +16,26 @@ admin@ncs> switch cli
 admin@ncs# config
 Entering configuration mode terminal
 admin@ncs(config)# devices device asr1
-admin@ncs(config-device-asr1)# config hostname asr01
-admin@ncs(config-config)# commit dry-run outformat xml
+admin@ncs(config-device-asr1)# config interface Loopback 0
+admin@ncs(config-if)# ipv4 address 10.0.0.1 255.255.255.255
+admin@ncs(config-if)# commit dry-run outformat xml
 result-xml {
     local-node {
         data <devices xmlns="http://tail-f.com/ns/ncs">
                <device>
                  <name>asr1</name>
                  <config>
-                   <hostname xmlns="http://tail-f.com/ned/cisco-ios-xr">asr01</hostname>
+                   <interface xmlns="http://tail-f.com/ned/cisco-ios-xr">
+                     <Loopback>
+                       <id>0</id>
+                       <ipv4>
+                         <address>
+                           <ip>10.0.0.1</ip>
+                           <mask>255.255.255.255</mask>
+                         </address>
+                       </ipv4>
+                     </Loopback>
+                   </interface>
                  </config>
                </device>
              </devices>
@@ -43,5 +54,12 @@ result-xml {
         device:
         - name: asr1
           config:
-            tailf-ned-cisco-ios-xr:hostname: "asr01"
+            tailf-ned-cisco-ios-xr:interface:
+              Loopback:
+              - id: '0'
+                ipv4:
+                  address:
+                    ip: '10.0.0.1'
+                    mask: '255.255.255.255'
+
 ```
