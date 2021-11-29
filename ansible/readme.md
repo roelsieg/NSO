@@ -56,7 +56,13 @@ result-xml {
           config:
             tailf-ned-cisco-ios-xr:interface:
               Loopback:
-              - id: '0'
+                id: '0'
+                ipv4:
+                  address:
+                    ip: '10.0.0.0'
+                    mask: '255.255.255.255'
+              Loopback:
+                id: '1'
                 ipv4:
                   address:
                     ip: '10.0.0.1'
