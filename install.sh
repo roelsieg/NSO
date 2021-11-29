@@ -79,5 +79,5 @@ cd /opt/ncs/examples.ncs/datacenter/datacenter
 make stop clean all start
 # ncs version installed
 ncs --version
-# ncs_cli -u admin
+# /opt/ncs/bin/ncs_cli -u admin
 # http://127.0.0.1:8080/login.html
