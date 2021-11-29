@@ -11,7 +11,32 @@
         data:
           tailf-ncs:devices:
             device:
-              - name: asr2
+              - name: asr3
+                config:
+                  tailf-ned-cisco-ios-xr:hostname: "asr3"
+    - name: CREATE LOOPBACKS
+      cisco.nso.nso_config:
+        url: http://192.168.1.23:8080/jsonrpc
+        username: admin
+        password: admin
+        data:
+          tailf-ncs:devices:
+            device:
+              - name: asr3
+                config:
+                  tailf-ned-cisco-ios-xr:interface:
+                    Loopback:
+                    - id: 0
+                    - id: 1
+    - name: GIVEN LOOPBACKS IPS
+      cisco.nso.nso_config:
+        url: http://192.168.1.23:8080/jsonrpc
+        username: admin
+        password: admin
+        data:
+          tailf-ncs:devices:
+            device:
+              - name: asr3
                 config:
                   tailf-ned-cisco-ios-xr:interface:
                     Loopback:
@@ -25,5 +50,4 @@
                         address:
                           ip: '10.0.0.1'
                           mask: '255.255.255.255'
-                  tailf-ned-cisco-ios-xr:hostname: "asr2"
 
