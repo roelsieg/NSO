@@ -74,9 +74,10 @@ source /opt/ncs/ncsrc
 # provision/nso-5.2.3.6-cisco-sae-core-fp-2.2.0/local-install/local-install.sh /opt/ncs
 
 ncs-setup --dest /opt/ncs-run
-cd /opt/ncs-run/
-ncs
+# cd /opt/ncs-run/
+cd /opt/ncs/examples.ncs/datacenter/datacenter
+make stop clean all start
 # ncs version installed
 ncs --version
-
-
+# ncs_cli -u admin
+# http://127.0.0.1:8080/login.html

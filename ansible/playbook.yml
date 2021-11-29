@@ -1,0 +1,11 @@
+- name: ADJUST HOSTNAME
+  cisco.nso.nso_config:
+    url: http://127.0.0.1:8080/jsonrpc
+    username: admin
+    password: admin
+    data:
+        tailf-ncs:devices:
+        device:
+        - name: asr1
+          config:
+            tailf-ned-cisco-ios-xr:hostname: "asr01"

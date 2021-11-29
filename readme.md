@@ -11,3 +11,13 @@ Package is currently unknown. `nso-x.x.x.x-cisco-sae-core-fp-x.x.x.tar.gz`  Shou
 provision directory.
 
 <https://software.cisco.com/download/home/286323467/type/286321795/release/2.2.0>
+
+## Getting started
+
+```bash
+vagrant up
+vagrant ssh nso
+/opt/ncs/bin/ncs_cli -u admin
+```
+
+http://127.0.0.1:8080/login.html login admin:admin
