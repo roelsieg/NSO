@@ -15,8 +15,7 @@
             config:
               tailf-ned-cisco-ios-xr:interface:
                 Loopback:
-                - name: '0'
-                  id: '0'
+                - id: '0'
                   ipv4:
                     address:
                       ip: '10.0.0.0'
