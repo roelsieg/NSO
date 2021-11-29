@@ -13,9 +13,9 @@
           device:
           - name: asr1
             config:
-              tailf-ned-cisco-ios-xr:interface:
+              tailf-ned-cisco-ios:interface:
                 Loopback:
-                - id: '0'
+                - name: '0'
                   ipv4:
                     address:
                       ip: '10.0.0.0'
