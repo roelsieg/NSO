@@ -5,7 +5,7 @@
   tasks:
     - name: ADJUST HOSTNAME
       cisco.nso.nso_config:
-        url: http://127.0.0.1:8080/jsonrpc
+        url: http://192.168.1.23:8080/jsonrpc
         username: admin
         password: admin
         data:
