@@ -28,12 +28,6 @@ result-xml {
                    <interface xmlns="http://tail-f.com/ned/cisco-ios-xr">
                      <Loopback>
                        <id>0</id>
-                       <ipv4>
-                         <address>
-                           <ip>10.0.0.1</ip>
-                           <mask>255.255.255.255</mask>
-                         </address>
-                       </ipv4>
                      </Loopback>
                    </interface>
                  </config>
@@ -44,28 +38,17 @@ result-xml {
 ```
 
 ```yaml
-- name: ADJUST HOSTNAME
+- name: CREATE LOOPBACK
   cisco.nso.nso_config:
     url: http://127.0.0.1:8080/jsonrpc
     username: admin
     password: admin
     data:
-        tailf-ncs:devices:
+      tailf-ncs:devices:
         device:
         - name: asr1
           config:
             tailf-ned-cisco-ios-xr:interface:
               Loopback:
-                id: '0'
-                ipv4:
-                  address:
-                    ip: '10.0.0.0'
-                    mask: '255.255.255.255'
-              Loopback:
-                id: '1'
-                ipv4:
-                  address:
-                    ip: '10.0.0.1'
-                    mask: '255.255.255.255'
-
+              id: '0'
 ```

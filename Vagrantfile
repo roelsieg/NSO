@@ -19,6 +19,7 @@ Vagrant.configure(2) do |config|
   end
   config.vm.define 'nso' do |nso|
 	  nso.vm.box = "ubuntu/focal64"
+    nso.vbguest.auto_update = false
 	  nso.vm.network :forwarded_port, guest: 22, host: 12202, id: 'ssh'
     nso.vm.network :forwarded_port, guest: 8080, host: 8080, id: 'nso'
 	  # nso.vm.network "private_network", virtualbox__intnet: "ans_s01",
