@@ -1,0 +1,11 @@
+- hosts: nso
+  tasks:
+    - name: Copy file with owner and permissions
+      copy:
+        src: /vagrant/files/copy_me.txt
+        dest: /tmp/copy_me.txt
+        remote_src: yes
+        owner: vagrant
+        group: vagrant
+        mode: '0644'
+

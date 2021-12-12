@@ -1,7 +1,9 @@
 # Ansible NSO automaton test
 
-The objective of this quick test with Asnible is to see if we can setup automation with Ansible
+The objective of this quick test with Ansible is to see if we can setup automation with Ansible
 towards NSO. We use the datacentre example from `/opt/ncs/examples.ncs/datacenter/datacenter`
+
+## nso_config playbook
 
 Just as example of a change with ansible I adjust the name of one of the ASRs.
 
@@ -51,4 +53,25 @@ result-xml {
             tailf-ned-cisco-ios-xr:interface:
               Loopback:
               id: '0'
+```
+
+## copy playbook
+
+To test a file copy some adjustment to the vagarnt host is needed:
+
+```bash
+sudo vi /etc/ssh/sshd_config
+..
+#PasswordAuthentication no
+PasswordAuthentication yes
+..
+
+sudo systemctl restart ssh.service
+```
+
+Now ansible can login remote with a user
+
+```bash
+cd ansible
+ansible-playbook playbook_copy.yml -i hosts
 ```

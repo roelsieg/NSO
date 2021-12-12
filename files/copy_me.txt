@@ -1,0 +1,13 @@
+test file content
+
+Adjust the vagrant user login form remote:
+
+```bash
+sudo vi /etc/ssh/sshd_config
+..
+#PasswordAuthentication no
+PasswordAuthentication yes
+..
+
+sudo systemctl restart ssh.service
+```
